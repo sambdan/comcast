@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+Kind: Deployment
+metadata:
+	name: weather-app
+spec:
+	replicas: 2
+	selector:
+		matchlabels:
+			app: weather-app
+	template:
+		metadata:
+			labels:
+				app: weather-app
+		spec:
+			containers:
+			  - name: weather-app
+				image: danielsaha/comcast:weather-check
